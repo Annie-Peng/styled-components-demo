@@ -85,19 +85,19 @@ const buttonStyle = css`
   cursor: pointer;
 `;
 
-const ContainedButton = styled.button`
+const DefaultButton = styled.button`
   ${buttonStyle}
 
-  background-color: #586AF2;
-  border: none;
-  color: #FFFFFF;
-`;
+  ${({ isContained }) => isContained && css`
+    background-color: #586AF2;
+    border: none;
+    color: #FFFFFF;
+  `}
 
-const BorderButton = styled.button`
-  ${buttonStyle}
-
-  background-color: transparent;
-  border: 2px solid #1F2E4E;
+  ${({ isBorder }) => isBorder && css`
+    background-color: transparent;
+    border: 2px solid #1F2E4E;
+  `}
 `;
 
 const Image = styled.img`
@@ -126,12 +126,12 @@ const Banner = () => {
             Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc
           </Desc>
           <Buttons>
-            <ContainedButton>
+            <DefaultButton isContained>
               ContainedButton
-            </ContainedButton>
-            <BorderButton>
+            </DefaultButton>
+            <DefaultButton isBorder>
               BorderButton
-            </BorderButton>
+            </DefaultButton>
           </Buttons>
         </Text>
         <Image src="https://drive.google.com/uc?export=view&id=1zY6sSfDXapavJ2goiO7q6L3mtr7GalFM" alt="Logo" />
