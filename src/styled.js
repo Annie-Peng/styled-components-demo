@@ -88,7 +88,23 @@ export const buttonStyle = css`
 export const DefaultButton = styled.button`
   ${buttonStyle}
 
-  ${({ isContained }) => isContained && css`
+  ${({ theme }) => {
+    if (theme === 'isContained') {
+      return css`
+        background-color: #586AF2;
+        border: none;
+        color: #FFFFFF;
+      `
+    }
+    if (theme === 'isBorder') {
+      return css`
+        background-color: transparent;
+        border: 2px solid #1F2E4E;
+      `
+    }
+  }}
+
+  /* ${({ isContained }) => isContained && css`
     background-color: #586AF2;
     border: none;
     color: #FFFFFF;
@@ -97,7 +113,7 @@ export const DefaultButton = styled.button`
   ${({ isBorder }) => isBorder && css`
     background-color: transparent;
     border: 2px solid #1F2E4E;
-  `}
+  `} */
 `;
 
 export const Image = styled.img`
