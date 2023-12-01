@@ -5,7 +5,8 @@ function App() {
   return (
     <>
       {/* <Header /> */}
-      <Banner />
+      <Banner page='pageA' />
+      <Banner page='pageB' />
       {/* <Features /> */}
       {/* <Footer /> */}
     </>
