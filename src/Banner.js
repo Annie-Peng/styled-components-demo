@@ -14,16 +14,10 @@ const Banner = () => {
           </Desc>
           <Buttons>
             {data.buttons.map((button) => (
-              <DefaultButton theme={button.theme}>
+              <DefaultButton theme={button.theme} key={button.text}>
                 {button.text}
               </DefaultButton>
             ))}
-            {/* <DefaultButton theme='isContained'>
-              ContainedButton
-            </DefaultButton>
-            <DefaultButton theme='isBorder'>
-              BorderButton
-            </DefaultButton> */}
           </Buttons>
         </Text>
         <Image src="https://drive.google.com/uc?export=view&id=1zY6sSfDXapavJ2goiO7q6L3mtr7GalFM" alt="Logo" />

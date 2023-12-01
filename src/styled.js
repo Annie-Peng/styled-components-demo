@@ -77,7 +77,7 @@ export const Buttons = styled.div`
   }
 `;
 
-export const buttonStyle = css`
+const buttonStyle = css`
   width: 100%;
   padding: 12px 24px;
   border-radius: 999px;
@@ -85,35 +85,24 @@ export const buttonStyle = css`
   cursor: pointer;
 `;
 
+const containedStyle = css`
+  background-color: #586AF2;
+  border: none;
+  color: #FFFFFF;
+`;
+
+const borderStyle = css`
+  background-color: transparent;
+  border: 2px solid #1F2E4E;
+`;
+
 export const DefaultButton = styled.button`
   ${buttonStyle}
 
   ${({ theme }) => {
-    if (theme === 'isContained') {
-      return css`
-        background-color: #586AF2;
-        border: none;
-        color: #FFFFFF;
-      `
-    }
-    if (theme === 'isBorder') {
-      return css`
-        background-color: transparent;
-        border: 2px solid #1F2E4E;
-      `
-    }
+    if (theme === 'isContained') return containedStyle
+    if (theme === 'isBorder') return borderStyle
   }}
-
-  /* ${({ isContained }) => isContained && css`
-    background-color: #586AF2;
-    border: none;
-    color: #FFFFFF;
-  `}
-
-  ${({ isBorder }) => isBorder && css`
-    background-color: transparent;
-    border: 2px solid #1F2E4E;
-  `} */
 `;
 
 export const Image = styled.img`
